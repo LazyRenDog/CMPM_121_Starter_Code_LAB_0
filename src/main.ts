@@ -6,7 +6,7 @@
 console.log("🎮 CMPM 121 - Starting...");
 
 // Simple counter for demonstration
-// deno-lint-ignore prefer-const
+// deno lint ignore prefer const
 let counter: number = 0;
 
 // Create basic HTML structure
@@ -14,13 +14,33 @@ document.body.innerHTML = `
   <h1>CMPM 121 Project</h1>
   <p>Counter: <span id="counter">0</span></p>
   <button id="increment">Click Me!</button>
+  <button id="decrement">Don't Click Me!</button>
 `;
 
 // Add click handler
-const button = document.getElementById("increment")!;
+const incrementbutton = document.getElementById("increment")!;
+const decrementbutton = document.getElementById("decrement")!;
 const counterElement = document.getElementById("counter")!;
 
-button.addEventListener("click", () => {
+incrementbutton.addEventListener("click", () => {
   // This looks like to a good place to add some logic!
-  console.log("I have these thingies:", button, counterElement, counter);
+  console.log(
+    "I have these thingies:",
+    incrementbutton,
+    counterElement,
+    counter,
+  );
+  counter++;
+  counterElement.textContent = counter.toString();
+});
+
+decrementbutton.addEventListener("click", () => {
+  console.log(
+    "I don't have these thingies:",
+    decrementbutton,
+    counterElement,
+    counter,
+  );
+  counter--;
+  counterElement.textContent = counter.toString();
 });
