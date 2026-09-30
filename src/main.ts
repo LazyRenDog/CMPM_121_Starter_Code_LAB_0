@@ -22,23 +22,11 @@ const decrementbutton = document.getElementById("decrement")!;
 const counterElement = document.getElementById("counter")!;
 
 incrementbutton.addEventListener("click", () => {
-  console.log(
-    "I have these thingies:",
-    incrementbutton,
-    counterElement,
-    counter,
-  );
   counter++;
   counterElement.textContent = counter.toString();
 });
 
 decrementbutton.addEventListener("click", () => {
-  console.log(
-    "I don't have these thingies:",
-    decrementbutton,
-    counterElement,
-    counter,
-  );
   counter--;
   counterElement.textContent = counter.toString();
 });
